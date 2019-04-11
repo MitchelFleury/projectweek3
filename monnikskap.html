@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="css/styles.css" rel="stylesheet">
+    <!--Load the AJAX API-->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load('current', {packages: ['corechart', 'line']});
+        google.charts.setOnLoadCallback(drawCrosshairs);
+    function drawCrosshairs() {
+          var data = new google.visualization.DataTable();
+          data.addColumn('number', 'X');
+          data.addColumn('number', 'adenium obesum');
+          data.addColumn('number', 'Stekelnootje');
+          data.addColumn('number', 'Duizendblad');
+          data.addColumn('number', 'Monnikskap');
+          data.addColumn('number', 'Rode Vrouwenmantel');
+          data.addColumn('number', 'Sierui');
+          data.addColumn('number', 'Incalelie');
+          data.addRows([
+            [0, 1, 1, 2, 3, 2, 1, 4],    [1, 5, 2, 8, 7, 9, 3, 10],    [2, 12, 2, 17, 15, 19, 6, 18],
+            [3, 17, 5, 24, 21, 25, 8, 22],   [4, 21, 7, 31, 29, 33, 11, 30],  [5, 24, 9, 37, 41, 40, 13, 38],
+            [6, 26, 12, 43, 58, 48, 15, 46],    [7, 29, 14, 51, 65, 56, 18, 51],    [8, 34, 17, 58, 78, 62, 20, 59],
+            [9, 37, 18, 61, 86, 69, 20, 64],    [10, 40, 20, 70, 90, 78, 20, 70],
+          ]);
+          var options = {
+            hAxis: {
+              title: 'Week'
+            },
+            vAxis: {
+              title: 'cm'
+            },
+            colors: ['#a52714', '#097138','#5942f4','#f4d041','#070705','#f20202','#11f101'],
+            crosshair: {
+              color: '#000',
+              trigger: 'selection'
+            }
+          };
+          var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+          chart.draw(data, options);
+        }
+      </script>
+  </head>
+  <body>
+    <div class="d-flex" id="wrapper">
+      <!-- Sidebar -->
+      <div class="" id="sidebar-wrapper">
+        <div class="sidebar-heading">Egberts Plantage</div>
+        <div class="list-group list-group-flush">
+          <a href="index.html" class="list-group-item list-group-item-action navbar-custom navbar-actief">Dashboard</a>
+        </div>
+      </div>
+      <!-- /#sidebar-wrapper -->
+      <!-- Page Content -->
+      <div id="page-content-wrapper">
+        <nav class="navbar navbar-expand-lg">
+          <button class="btn btn-primary" id="menu-toggle">Menu</button>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </nav>
+        <div class="container-fluid">
+
+          <div class="row">
+            <div class="col-5 offset-1">
+              <div class="grote-foto">
+                <img src="images/monnikskap.jpg" alt="bloemen foto" />
+              </div>
+            </div>
+            <div class="col-4 offset-1">
+             <div class="beschrijving-titel">
+               <h2 class="text-center">Monnikskap</h2>
+               <p><p class="text-center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate </p></p>
+            </div>
+          </div>
+
+
+
+        </div>
+        <div class="grafiek">
+          <div id="chart_div"></div>
+        </div>
+      </div>
+      <!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Menu Toggle Script -->
+    <script>
+      $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+      });
+    </script>
+  </body>
+</html>
